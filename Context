@@ -1,5 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 
-public class RedSocial
+namespace RedSocial{
+
+     public class RedSocialContext:DbContext{
+         
+         public DbSet<Usuario>
