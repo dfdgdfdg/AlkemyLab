@@ -6,8 +6,13 @@ using Microsoft.EntityFrameworkCore;
 namespace RedSocial{
 
      public class RedSocialContext:DbContext{
-         
+     
+         public override void OnConfiguring(DbContextOptionsBuilder optionsBuilder){
+             optionsBuilder.UseSqlServer(" ; database=RedSocial; ") //no estoy seguro de cuán bien está esta parte. No entiendo demasiado bien la sintaxis de esta funcion
+         }
          public DbSet<User> User {get;set;}
          public DbSet<Post> Post {get;set;}
          public DbSet<Comment> Comment {get;set;}
+     }
+ }
          
